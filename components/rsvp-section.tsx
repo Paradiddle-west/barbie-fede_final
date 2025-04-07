@@ -52,13 +52,13 @@ export default function RsvpSection() {
       reply_to: 'bodacliente@gmail.com', // Puedes reemplazar esto con un campo de email en el formulario
     };
     
-    // Enviar email usando EmailJS
-    // Reemplaza 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID' y 'YOUR_PUBLIC_KEY' con tus credenciales de EmailJS
+    // Enviar email usando EmailJS con variables de entorno
+    // En Next.js, solo las variables que comienzan con NEXT_PUBLIC_ son accesibles en el cliente
     emailjs.send(
-      'service_e6sutb3', 
-      'template_3ycinua',
+      process.env.NEXT_PUBLIC_SERVICE_ID || '', // Debe ser accesible vía process.env.NEXT_PUBLIC_SERVICE_ID en producción
+      process.env.NEXT_PUBLIC_TEMPLATE_ID || '', // Debe ser accesible vía process.env.NEXT_PUBLIC_TEMPLATE_ID en producción
       templateParams,
-      'Eg8GylH3wOseK9nDp'
+      process.env.NEXT_PUBLIC_KEY || 'Eg8GylH3wOseK9nDp'
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
