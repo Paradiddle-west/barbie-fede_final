@@ -41,7 +41,7 @@ export default function WeddingHeader() {
       <div className="z-10 flex flex-col items-center w-full pt-16">
         {/* Título en la parte superior */}
         <div className={`text-center ${isLoaded ? "fade-in" : "opacity-0"}`} style={{ transitionDelay: "0.3s" }}>
-          <h1 className="font-dancing text-5xl md:text-7xl text-shadow-lg">Barbie & Fede</h1>
+          <h1 className="font-dancing text-5xl md:text-7xl text-shadow-lg text-white">Barbie & Fede</h1>
         </div>
       </div>
 
