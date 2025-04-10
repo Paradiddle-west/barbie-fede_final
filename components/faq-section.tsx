@@ -8,7 +8,7 @@ export default function FaqSection() {
     {
       question: "¿Cuál es el código de vestimenta?",
       answer:
-        "El código de vestimenta para nuestra boda es formal. Para los caballeros sugerimos traje oscuro o smoking, y para las damas vestido largo o cocktail. Evitar el color blanco, por favor.",
+        "El código de vestimenta para nuestra boda es formal. Para los caballeros sugerimos traje, y para las damas vestido o traje. Evitar el color blanco, por favor.",
     },
     {
       question: "¿Hay opciones de alojamiento cerca?",
@@ -66,7 +66,7 @@ export default function FaqSection() {
     {
       question: "¿Habrá opciones para dietas especiales?",
       answer:
-        "Por supuesto. Ofreceremos opciones vegetarianas, veganas y sin gluten. Por favor, indícanos tus restricciones alimentarias en el formulario de confirmación de asistencia.",
+        "Por supuesto. Ofreceremos opciones vegetarianas, veganas y sin gluten. Por favor, indícanos tus restricciones alimentarias en el formulario de confirmación de asistencia o por Whatsapp.",
     },
   ]
 
