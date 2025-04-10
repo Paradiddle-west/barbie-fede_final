@@ -24,7 +24,7 @@ export default function OurStory() {
                   <Gift className="h-8 w-8 text-blue-600" />
                 </div>
                 <p className="text-gray-500 text-center mb-8">
-                  Si preferís hacer un regalo en efectivo, puedes transferir a nuestras cuentas bancarias.
+                  Si queres hacernos un regalo, podes transferirnos a nuestras cuentas bancarias.
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 md:gap-6 mt-2 pt-4 border-t border-gray-100">

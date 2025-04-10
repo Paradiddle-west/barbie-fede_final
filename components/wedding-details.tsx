@@ -19,7 +19,7 @@ export default function WeddingDetails() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="font-dancing text-[3.2rem] text-center mb-12">La boda</h2>
+        <h2 className="font-dancing text-[3.2rem] text-center mb-12" style="color: #ffffff;">La boda</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event Details */}
