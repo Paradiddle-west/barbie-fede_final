@@ -17,8 +17,6 @@ export default function RsvpSection() {
   const [formState, setFormState] = useState({
     name: "",
     attending: "yes",
-    withCompanion: "no",
-    companionName: "",
     dietaryRestrictions: "ninguna",
     message: "",
   })
@@ -45,8 +43,6 @@ export default function RsvpSection() {
     const templateParams = {
       from_name: formState.name,
       attending: formState.attending === 'yes' ? 'Sí asistiré' : 'No podré asistir',
-      with_companion: formState.withCompanion === 'yes' ? 'Con acompañante' : 'Sin acompañante',
-      companion_name: formState.companionName || 'N/A',
       dietary_restrictions: formState.dietaryRestrictions,
       message: formState.message || 'Sin mensaje',
       reply_to: 'bodacliente@gmail.com', // Puedes reemplazar esto con un campo de email en el formulario
@@ -71,8 +67,6 @@ export default function RsvpSection() {
         setFormState({
           name: "",
           attending: "yes",
-          withCompanion: "no",
-          companionName: "",
           dietaryRestrictions: "ninguna",
           message: "",
         })
@@ -164,65 +158,25 @@ export default function RsvpSection() {
               </div>
 
               {formState.attending === "yes" && (
-                <>
-                  <div className="space-y-3 text-left px-1 md:px-0">
-                    <Label className="text-gray-700">¿Vendrás acompañado(a)?</Label>
-                    <RadioGroup
-                      value={formState.withCompanion}
-                      onValueChange={(value) => handleSelectChange("withCompanion", value)}
-                      className="space-y-2"
-                    >
-                      <div className="flex items-start space-x-2">
-                        <RadioGroupItem
-                          value="yes"
-                          id="companion-yes"
-                          className="mobile-touch-target text-blue-600 mt-1"
-                        />
-                        <div className="flex-1">
-                          <Label htmlFor="companion-yes" className="text-gray-700 block mb-1">
-                            Sí (Indica el nombre de tu acompañante)
-                          </Label>
-                          {formState.withCompanion === "yes" && (
-                            <Input
-                              id="companionName"
-                              name="companionName"
-                              value={formState.companionName}
-                              onChange={handleChange}
-                              placeholder="Nombre de tu acompañante"
-                              className="bg-white border-blue-200 text-gray-800 placeholder:text-gray-400 mobile-touch-target mt-1"
-                            />
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="no" id="companion-no" className="mobile-touch-target text-blue-600" />
-                        <Label htmlFor="companion-no" className="text-gray-700">
-                          No, asistiré solo(a)
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
-
-                  <div className="space-y-2 text-left px-1 md:px-0">
-                    <Label htmlFor="dietaryRestrictions" className="text-gray-700">
-                      Restricciones alimentarias
-                    </Label>
-                    <Select
-                      value={formState.dietaryRestrictions}
-                      onValueChange={(value) => handleSelectChange("dietaryRestrictions", value)}
-                    >
-                      <SelectTrigger className="bg-white border-blue-200 text-gray-800 mobile-touch-target">
-                        <SelectValue placeholder="Selecciona restricción alimentaria" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="ninguna">Ninguna</SelectItem>
-                        <SelectItem value="vegetariano">Vegetariano</SelectItem>
-                        <SelectItem value="vegano">Vegano</SelectItem>
-                        <SelectItem value="sin-tacc">Sin TACC (Sin Gluten)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </>
+                <div className="space-y-2 text-left px-1 md:px-0">
+                  <Label htmlFor="dietaryRestrictions" className="text-gray-700">
+                    Restricciones alimentarias
+                  </Label>
+                  <Select
+                    value={formState.dietaryRestrictions}
+                    onValueChange={(value) => handleSelectChange("dietaryRestrictions", value)}
+                  >
+                    <SelectTrigger className="bg-white border-blue-200 text-gray-800 mobile-touch-target">
+                      <SelectValue placeholder="Selecciona restricción alimentaria" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ninguna">Ninguna</SelectItem>
+                      <SelectItem value="vegetariano">Vegetariano</SelectItem>
+                      <SelectItem value="vegano">Vegano</SelectItem>
+                      <SelectItem value="sin-tacc">Sin TACC (Sin Gluten)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               )}
 
               <div className="space-y-2 text-left px-1 md:px-0">
@@ -263,4 +217,3 @@ export default function RsvpSection() {
     </section>
   )
 }
-
