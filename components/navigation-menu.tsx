@@ -7,20 +7,15 @@ import { cn } from "@/lib/utils"
 const navItems = [
   { id: "header", label: "Inicio" },
   { id: "date", label: "Fecha" },
-  { id: "couple", label: "Nosotros" },
-  { id: "details", label: "La Boda" },
-  { id: "rsvp", label: "RSVP" },
-  { id: "gallery", label: "Galería" },
-  { id: "instagram", label: "Instagram" },
+  { id: "details", label: "Cómo llegar" },
   { id: "story", label: "Regalos" },
-  { id: "faq", label: "FAQ" },
+  { id: "instagram", label: "Instagram" },
 ]
 
 export default function NavigationMenu() {
   const [activeSection, setActiveSection] = useState("header")
   const [visible, setVisible] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +25,6 @@ export default function NavigationMenu() {
       } else {
         setVisible(false)
       }
-
-      // Calculate scroll progress
-      const scrollable = document.body.scrollHeight - window.innerHeight
-      const progress = Math.min((window.scrollY / scrollable) * 100, 100)
-      setScrollProgress(progress)
 
       // Determine active section
       const sections = navItems
@@ -162,7 +152,7 @@ export default function NavigationMenu() {
         <div
           className="h-full bg-blue-600"
           style={{
-            width: `${scrollProgress}%`,
+            width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%`,
             transition: "width 0.2s ease-out",
           }}
         />
@@ -170,4 +160,3 @@ export default function NavigationMenu() {
     </>
   )
 }
-

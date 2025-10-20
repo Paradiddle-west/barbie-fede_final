@@ -56,4 +56,3 @@ function TimeUnit({ value, label }: { value: number; label: string }) {
     </div>
   )
 }
-
