@@ -27,7 +27,8 @@ export default function WeddingDetails() {
 
             {/* Transportation Tabs */}
             <div className="mt-6">
-              <h4 className="text-center text-base font-bold text-white uppercase tracking-wider mb-4">Cómo llegar a <span className="font-bold">Álamos de Cañuelas</span></h4>
+              <h4 className="text-center text-base font-bold text-white uppercase tracking-wider mb-4">Cómo llegar a <span className="font-bold">Álamos de Cañuelas</span>
+              <span><a href="https://maps.app.goo.gl/5eFFj1hx1jcip5n67" target="_blank"> Ver Mapa</a></span></h4>
               <div className="w-full">
                 <span className="mt-2 md:mt-4 text-xs md:text-sm">
                   <p className="mb-2">Desde CABA:</p>
