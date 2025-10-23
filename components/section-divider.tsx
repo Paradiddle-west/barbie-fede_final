@@ -44,4 +44,3 @@ export default function SectionDivider({ className, icon, color = "primary" }: S
     </div>
   )
 }
-

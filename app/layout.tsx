@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Barbie & Fede | ¡Nos casamos! 01/11/2025',
-  description: 'El gran día es el 1 de noviembre de 2025 en Álamos de Cañuelas. Te esperamos!',
-  generator: 'v0.dev',
-  icons: {
-    icon: '/favicon-32x32.png',
-    apple: '/apple-touch-icon.png',
-  },
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.app',
 }
 
 export default function RootLayout({
@@ -18,7 +17,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <style>{`
+html {
+  font-family: ${GeistSans.style.fontFamily};
+  --font-sans: ${GeistSans.variable};
+  --font-mono: ${GeistMono.variable};
+}
+        `}</style>
+      </head>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }

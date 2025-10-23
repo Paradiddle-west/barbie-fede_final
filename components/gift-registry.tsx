@@ -30,7 +30,7 @@ export default function GiftRegistry() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm max-w-2xl mx-auto">
-            Si queres hacernos un regalo, puedes transferir a nuestra cuenta bancaria:
+            Si prefieres hacer un regalo en efectivo, puedes transferir a nuestra cuenta bancaria:
           </p>
           <div className="mt-4 bg-white rounded-lg shadow-sm border p-4 inline-block">
             <p className="font-medium">Banco Nación</p>
@@ -43,4 +43,3 @@ export default function GiftRegistry() {
     </section>
   )
 }
-

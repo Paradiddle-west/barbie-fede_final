@@ -22,4 +22,3 @@ function NavIcon({ icon, label }: { icon: React.ReactNode; label: string }) {
     </div>
   )
 }
-

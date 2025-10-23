@@ -2,18 +2,16 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle2, Send, AlertCircle } from "lucide-react"
-import emailjs from '@emailjs/browser'
+import { CheckCircle2, Send } from "lucide-react"
 
 export default function RsvpSection() {
-  const formRef = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     name: "",
     attending: "yes",
@@ -23,7 +21,6 @@ export default function RsvpSection() {
 
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -37,27 +34,9 @@ export default function RsvpSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setError(false)
-    
-    // Preparar plantilla con campos personalizados
-    const templateParams = {
-      from_name: formState.name,
-      attending: formState.attending === 'yes' ? 'Sí asistiré' : 'No podré asistir',
-      dietary_restrictions: formState.dietaryRestrictions,
-      message: formState.message || 'Sin mensaje',
-      reply_to: 'bodacliente@gmail.com', // Puedes reemplazar esto con un campo de email en el formulario
-    };
-    
-    // Enviar email usando EmailJS con variables de entorno
-    // En Next.js, solo las variables que comienzan con NEXT_PUBLIC_ son accesibles en el cliente
-    emailjs.send(
-      process.env.NEXT_PUBLIC_SERVICE_ID || '', // Debe ser accesible vía process.env.NEXT_PUBLIC_SERVICE_ID en producción
-      process.env.NEXT_PUBLIC_TEMPLATE_ID || '', // Debe ser accesible vía process.env.NEXT_PUBLIC_TEMPLATE_ID en producción
-      templateParams,
-      process.env.NEXT_PUBLIC_KEY || 'Eg8GylH3wOseK9nDp'
-    )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
+
+    // Simulate API call
+    setTimeout(() => {
       setIsSubmitting(false)
       setIsSubmitted(true)
 
@@ -71,12 +50,7 @@ export default function RsvpSection() {
           message: "",
         })
       }, 5000)
-    })
-    .catch((err) => {
-      console.error('FAILED...', err);
-      setIsSubmitting(false)
-      setError(true)
-    });
+    }, 1500)
   }
 
   return (
@@ -88,23 +62,7 @@ export default function RsvpSection() {
         </p>
 
         <div className="max-w-md mx-auto">
-          {error ? (
-            <div className="bg-white/80 rounded-lg p-8 text-center scale-in shadow-md">
-              <div className="flex justify-center mb-4">
-                <AlertCircle className="h-16 w-16 text-red-500" />
-              </div>
-              <h3 className="text-xl font-medium mb-2 text-red-800">Hubo un problema</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                No pudimos enviar tu confirmación. Por favor, intenta nuevamente o contáctanos directamente.
-              </p>
-              <Button 
-                onClick={() => setError(false)} 
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Volver al formulario
-              </Button>
-            </div>
-          ) : isSubmitted ? (
+          {isSubmitted ? (
             <div className="bg-white/80 rounded-lg p-8 text-center scale-in shadow-md">
               <div className="flex justify-center mb-4">
                 <CheckCircle2 className="h-16 w-16 text-blue-500" />
@@ -116,7 +74,6 @@ export default function RsvpSection() {
             </div>
           ) : (
             <form
-              ref={formRef}
               onSubmit={handleSubmit}
               className="space-y-6 bg-white/80 backdrop-blur-sm rounded-lg p-6 md:p-8 shadow-md"
             >

@@ -24,7 +24,7 @@ export default function OurStory() {
                   <Gift className="h-8 w-8 text-blue-600" />
                 </div>
                 <p className="text-gray-500 text-center mb-8">
-                  Si queres hacernos un regalo, podes transferirnos a nuestras cuentas bancarias.
+                  Si preferís hacer un regalo en efectivo, puedes transferir a nuestras cuentas bancarias.
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 md:gap-6 mt-2 pt-4 border-t border-gray-100">
@@ -51,7 +51,7 @@ export default function OurStory() {
               {/* Image */}
               <div className="relative overflow-hidden h-full min-h-[300px]">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/chester-n3yaYaMyctM9MH3irjahGeki0XHpWz.png"
+                  src="/images/design-mode/chester.png"
                   alt="Los Simpson relajándose en el jardín"
                   fill
                   className="object-cover"
@@ -70,4 +70,3 @@ export default function OurStory() {
     </section>
   )
 }
-
