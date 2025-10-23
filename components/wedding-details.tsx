@@ -19,13 +19,31 @@ export default function WeddingDetails() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="font-dancing text-[3.2rem] text-center mb-12" style={{ color: "#ffffff" }}>La boda</h2>
+        <h2 className="font-dancing text-[3.2rem] text-center mb-12" style={{ color: "#ffffff" }}>Cómo llegar</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event Details */}
           <div className="bg-blue-800/30 p-6 rounded-lg backdrop-blur-sm border border-white/10">
+
+            {/* Transportation Tabs */}
+            <div className="mt-6">
+              <h4 className="text-center text-base font-bold text-white uppercase tracking-wider mb-4">Cómo llegar a <span className="font-bold">Álamos de Cañuelas</span></h4>
+              <div className="w-full">
+                <span className="mt-2 md:mt-4 text-xs md:text-sm">
+                  <p className="mb-2">Desde CABA:</p>
+                  <ol className="list-decimal pl-5 space-y-1">
+                    <li>Toma la <span className="font-bold">Autopista Ezeiza-Cañuelas</span> dirección sur</li>
+                    <li>Continúa por la <span className="font-bold">Ruta 205</span> hasta la <span className="font-bold">Rotonda Cañuelas</span></li>
+                    <li>En la rotonda, tomá la <span className="font-bold">primera salida a la derecha</span> hacia la <span className="font-bold">Ruta Nacional 3</span></li>
+                    <li>Seguí por la <span className="font-bold">Ruta 3</span> durante 10 km, en sentido <span className="font-bold">"hacia Buenos Aires"</span>, hasta ver el cartel de <span className="font-bold">“Álamos”</span> a mano derecha</li>
+                    <li>Doblá a la derecha y avanzá unos <span className="font-bold">200 metros</span> por el camino de entrada hasta el salón</li>
+                  </ol>
+                  <p className="mt-2 text-xs">Tiempo estimado: 1 hora desde CABA, verificar con Google Maps para actualizar este tiempo en el momento del viaje</p>
+                </span>
+              </div>
+            </div>
+
             <div className="text-center mb-6">
-              <h3 className="uppercase tracking-wider text-sm mb-4 font-medium">Evento Principal</h3>
               <div className="flex justify-center space-x-12 mt-4">
                 <div className="flex flex-col items-center">
                   <Clock className="h-6 w-6 mb-2 text-blue-200" />
@@ -33,69 +51,11 @@ export default function WeddingDetails() {
                 </div>
                 <div className="flex flex-col items-center">
                   <MapPin className="h-6 w-6 mb-2 text-blue-200" />
-                  <span className="text-base font-bold text-white">1° de Noviembre, 2025</span>
+                  <span className="text-base font-bold text-white">Sábado 1° de Noviembre, 2025</span>
                 </div>
               </div>
             </div>
-            <p className="text-sm text-center mb-6">Celebraremos nuestra boda en Álamos de Cañuelas, Buenos Aires.</p>
 
-            {/* Transportation Tabs */}
-            <div className="mt-6">
-              <h4 className="text-center text-sm uppercase tracking-wider mb-4">Cómo llegar</h4>
-              <Tabs defaultValue="car" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 bg-blue-700/50 text-xs md:text-sm">
-                  <TabsTrigger
-                    value="car"
-                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white"
-                  >
-                    <Car className="h-4 w-4 mr-2" />
-                    <span className="hidden sm:inline">Auto</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="public"
-                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white"
-                  >
-                    <Train className="h-4 w-4 mr-2" />
-                    <span className="hidden sm:inline">Transporte</span>
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="airport"
-                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white text-white"
-                  >
-                    <Plane className="h-4 w-4 mr-2" />
-                    <span className="hidden sm:inline">Aeropuerto</span>
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="car" className="mt-2 md:mt-4 text-xs md:text-sm">
-                  <p className="mb-2">Desde Buenos Aires:</p>
-                  <ol className="list-decimal pl-5 space-y-1">
-                    <li>Toma la Autopista Ezeiza-Cañuelas dirección sur</li>
-                    <li>Continúa por la Ruta 205 hasta la rotonda Cañuelas</li>
-                    <li>Gira a la derecha hacia la RN3</li>
-                    <li>Sigue por RN3 durante 11km hasta el camino de entrada, luego 300mts hasta el salón</li>
-                  </ol>
-                  <p className="mt-2 text-xs">Tiempo estimado: 1 hora desde CABA</p>
-                </TabsContent>
-                <TabsContent value="public" className="mt-2 md:mt-4 text-xs md:text-sm">
-                  <p className="mb-2">Opciones de transporte público:</p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Tren Roca hasta Cañuelas + taxi (15 min) hasta el salón</li>
-                    <li>Bus línea 51 desde Constitución hasta Cañuelas</li>
-                  </ul>
-                  <p className="mt-2 text-xs">Confirma tu lugar en el transporte al enviar tu RSVP</p>
-                </TabsContent>
-                <TabsContent value="airport" className="mt-2 md:mt-4 text-xs md:text-sm">
-                  <p className="mb-2">Desde el Aeropuerto Internacional Ezeiza:</p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>El salón está a 35 km del Aeropuerto Internacional Ezeiza</li>
-                    <li>Puedes tomar un taxi o servicio de Uber (aprox. 40 minutos)</li>
-                    <li>Alquiler de auto disponible en el aeropuerto</li>
-                    <li>Si necesitas asistencia con el transporte, contáctanos</li>
-                  </ul>
-                  <p className="mt-2 text-xs">Recomendamos llegar al menos un día antes del evento</p>
-                </TabsContent>
-              </Tabs>
-            </div>
           </div>
 
           {/* Google Maps */}
@@ -114,7 +74,7 @@ export default function WeddingDetails() {
             />
             <div className="mt-2 p-2">
               <a
-                href="https://maps.google.com/maps?ll=-34.933260,-58.722122&z=15&t=m&hl=es&gl=AR&mapclient=embed&daddr=ALAMOS+DE+CA%C3%91UELAS"
+                href="https://maps.app.goo.gl/9oCiBBttJ4Vq6B8XA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white py-2 px-4 rounded-md text-sm flex items-center justify-center hover:bg-blue-700 transition-colors"

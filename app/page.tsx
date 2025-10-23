@@ -56,14 +56,15 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <SectionDivider icon={<MessageSquare className="h-4 w-4 text-blue-500" />} />
+     {/* <SectionDivider icon={<MessageSquare className="h-4 w-4 text-blue-500" />} /> */}
 
       {/* Movemos la sección RSVP justo después de la sección "La boda" */}
-      <AnimatedSection animation="fade-in">
+      {/*<AnimatedSection animation="fade-in">
         <section id="rsvp">
           <RsvpSection />
         </section>
       </AnimatedSection>
+      */}
 
       <SectionDivider icon={<Camera className="h-4 w-4 text-blue-500" />} />
 
