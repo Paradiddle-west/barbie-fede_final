@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils"
 const navItems = [
   { id: "header", label: "Inicio" },
   { id: "date", label: "Fecha" },
-  { id: "couple", label: "Nosotros" },
+  //{ id: "couple", label: "Nosotros" },
   { id: "details", label: "Como llegar" },
- //{ id: "rsvp", label: "RSVP" },
-  { id: "gallery", label: "Galería" },
-  { id: "instagram", label: "Instagram" },
   { id: "story", label: "Regalos" },
+ //{ id: "rsvp", label: "RSVP" },
+  { id: "instagram", label: "Instagram" },
+  { id: "gallery", label: "Galería" },
   { id: "faq", label: "FAQ" },
 ]
 

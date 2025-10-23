@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Top section with contact info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="text-center">
-            <h3 className="font-dancing text-2xl mb-4">Contacto</h3>
+            {/* <h3 className="font-dancing text-2xl mb-4">Contacto</h3>
             <div className="flex flex-col items-center space-y-2">
               <a
                 href="mailto:barbieyfedeboda@gmail.com"
@@ -21,7 +21,7 @@ export default function Footer() {
                 <Mail className="h-4 w-4 mr-2" />
                 <span>barbieyfedeboda@gmail.com</span>
               </a>
-            </div>
+            </div> */}
           </div>
 
           <div className="text-center">

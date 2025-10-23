@@ -40,19 +40,28 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <SectionDivider icon={<Users className="h-4 w-4 text-blue-500" />} />
+      {/*<SectionDivider icon={<Users className="h-4 w-4 text-blue-500" />} />
 
       <AnimatedSection animation="slide-up">
         <section id="couple">
           <CoupleProfiles />
         </section>
       </AnimatedSection>
+      */}
 
       <SectionDivider icon={<Calendar className="h-4 w-4 text-blue-500" />} />
 
       <AnimatedSection animation="fade-in">
         <section id="details">
           <WeddingDetails />
+        </section>
+      </AnimatedSection>
+
+      <SectionDivider icon={<Gift className="h-4 w-4 text-pink-500" />} color="accent" />
+
+      <AnimatedSection animation="fade-in">
+        <section id="story">
+          <OurStory />
         </section>
       </AnimatedSection>
 
@@ -66,14 +75,6 @@ export default function Home() {
       </AnimatedSection>
       */}
 
-      <SectionDivider icon={<Camera className="h-4 w-4 text-blue-500" />} />
-
-      <AnimatedSection animation="scale-in">
-        <section id="gallery">
-          <WeddingGallery />
-        </section>
-      </AnimatedSection>
-
       <SectionDivider color="accent" />
 
       <AnimatedSection animation="slide-up">
@@ -82,11 +83,11 @@ export default function Home() {
         </section>
       </AnimatedSection>
 
-      <SectionDivider icon={<Gift className="h-4 w-4 text-pink-500" />} color="accent" />
+      <SectionDivider icon={<Camera className="h-4 w-4 text-blue-500" />} />
 
-      <AnimatedSection animation="fade-in">
-        <section id="story">
-          <OurStory />
+      <AnimatedSection animation="scale-in">
+        <section id="gallery">
+          <WeddingGallery />
         </section>
       </AnimatedSection>
 

@@ -32,13 +32,13 @@ export default function WeddingDetails() {
                 <span className="mt-2 md:mt-4 text-xs md:text-sm">
                   <p className="mb-2">Desde CABA:</p>
                   <ol className="list-decimal pl-5 space-y-1">
-                    <li>Toma la <span className="font-bold">Autopista Ezeiza-Cañuelas</span> dirección sur</li>
-                    <li>Continúa por la <span className="font-bold">Ruta 205</span> hasta la <span className="font-bold">Rotonda Cañuelas</span></li>
-                    <li>En la rotonda, tomá la <span className="font-bold">primera salida a la derecha</span> hacia la <span className="font-bold">Ruta Nacional 3</span></li>
-                    <li>Seguí por la <span className="font-bold">Ruta 3</span> durante 10 km, en sentido <span className="font-bold">"hacia Buenos Aires"</span>, hasta ver el cartel de <span className="font-bold">“Álamos”</span> a mano derecha</li>
-                    <li>Doblá a la derecha y avanzá unos <span className="font-bold">200 metros</span> por el camino de entrada hasta el salón</li>
+                    <li>Toma la <span className="font-bold">Autopista Ezeiza-Cañuelas</span> dirección sur.</li>
+                    <li>Continúa por la <span className="font-bold">Ruta 205</span> hasta la <span className="font-bold">Rotonda Cañuelas</span>.</li>
+                    <li>En la rotonda, tomá la <span className="font-bold">primera salida a la derecha</span> hacia la <span className="font-bold">Ruta Nacional 3</span>.</li>
+                    <li>Seguí por la <span className="font-bold">Ruta 3</span> durante 10 km, en sentido <span className="font-bold">"hacia Buenos Aires"</span>, hasta ver el cartel de <span className="font-bold">“Álamos”</span> a mano derecha.</li>
+                    <li>Doblá a la derecha y avanzá unos <span className="font-bold">200 metros</span> por el camino de entrada hasta el salón.</li>
                   </ol>
-                  <p className="mt-2 text-xs">Tiempo estimado: 1 hora desde CABA, verificar con Google Maps para actualizar este tiempo en el momento del viaje</p>
+                  <p className="mt-2 text-xs mt-1">Tiempo estimado: 1 hora desde CABA, verificar con Google Maps para actualizar este tiempo en el momento del viaje.</p>
                 </span>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function WeddingDetails() {
             />
             <div className="mt-2 p-2">
               <a
-                href="https://maps.app.goo.gl/9oCiBBttJ4Vq6B8XA"
+                href="https://maps.app.goo.gl/5eFFj1hx1jcip5n67"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white py-2 px-4 rounded-md text-sm flex items-center justify-center hover:bg-blue-700 transition-colors"
